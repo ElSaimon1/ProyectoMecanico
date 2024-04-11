@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(150deg, #BDC3C7, #000000);
+    height: 100vh;
+}
+
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: linear-gradient(150deg, #BDC3C7, #000000);
+    border-radius: 10px;
+}
+
+.formulario h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.Registro{
+    font-family: 'calibri';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: linear-gradient(150deg, #BDC3C7, #000000);
+    border-radius: 4px;
+    padding: 30px;
+}
+
+.Registro h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.control{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+
+.Registro p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Registro a{
+    color: white;
+}
+
+.Registro .botons{
+    width: 100%;
+    background: #0c44d2;
+    border: none;
+    padding: 12px;
+    color: #ffffff;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+nav{
+    font-family: fantasy;
+   
+   
+}
