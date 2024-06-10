@@ -13,7 +13,7 @@
   {% bootstrap_javascript %}
 
   <!-- cargando CSS  -->
-  <link rel="stylesheet" type="text/css" href="{% static 'styleHome.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleHome.css' %}">
 </head>
 
 <body>
@@ -70,129 +70,12 @@
     </nav>
 
 
-  <div class="rectangular-frame">
-    <h1 style="color: aliceblue; font-weight: bold;"><u>¡Bienvenido a Rayo Makween!</u></h1>
-    <p style="color:aliceblue ">
-
-
-      ¡Estamos encantados de recibirte en nuestro taller mecánico! En Rayo Makween, nos dedicamos a
-      ofrecerte un servicio de calidad y confianza para mantener tu vehículo en óptimas condiciones.
-      Desde reparaciones básicas hasta trabajos especializados, nuestro equipo está aquí para atender todas tus
-      necesidades automotrices.</p>
-  </div>
-
-
-
-
-  <div class="btnCotizar">
-    <a class="btn btn-primary" href="../RayoMakuin/servicio.html" role="button">Cotizar Servicio</a>
-  </div>
-
-  <div class="hrFranja2">
-    <hr>
-  </div>
-  <div class="hrFranja">
-
-    <hr>
-    <div class="pMecanicos">
-      <p>NUESTROS MECÁNICOS</p>
-    </div>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card" style="width: 1000px;">
-            <img src="img mecanicos/caja cambio2.jpg" height="550px" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Renato Neira Aguila: </h5>
-              <p class="card-text">Ingeniero en mecánica automotriz especializado en cajas de cambio.</p>
-              <a href="../RayoMakuin/perfilMC.html" class="btn btn-primary" role="button">Ver mecánicos</a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card" style="width: 1000px; ">
-            <img src="img mecanicos/direccion.jpg" height="550px" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pedro Lopez Mancilla: </h5>
-              <p class="card-text">Ingeniero en mecánica automotriz especializado en suspensión y dirección.</p>
-              <a href="../RayoMakuin/perfilMC.html" class="btn btn-primary" role="button">Ver mecánicos</a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card" style="width: 1000px;">
-            <img src="img mecanicos/elec automotriz.jpg" height="550px" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Juan Rebolledo Sepulveda: </h5>
-              <p class="card-text">Ingeniero en mecánica automotriz especializado en electrónica automotriz</p>
-              <a href="../RayoMakuin/perfilMC.html" class="btn btn-primary" role="button">Ver mecánicos</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-
-  <br>
-  <br>
-  <br>
-  <div class="hrFranja3">
-    <hr>
-  </div>
-
-
-  <div class="hrFranja4">
-    <hr>
-  </div>
-
-
-  <div class="pMarcas">
-    <p>ALGUNAS DE LAS MARCAS QUE TRABAJAMOS</p>
-  </div>
-
-
-
-
-  <div>
-    <img src="imagen logos/audi.png" width="500px" alt="audi logo" class="audiLogo">
-    <img src="imagen logos/Chevrolet-Logo.png" width="500px" alt="chevrolet logo" class="chevyLogo">
-    <img src="imagen logos/bmw.png" alt="bmw" width="250px" class="bmwLogo">
-    <img src="imagen logos/toyota.png" alt="toyota" width="600px" class="toyotaLogo">
-    <img src="imagen logos/ferrari.png" alt="ferrari" width="500px">
-    <img src="imagen logos/hyundai.png" alt="hyundai" width="500px">
-    <img src="imagen logos/ssangyong.png" alt="ssangyong" width="300px">
-    <img src="imagen logos/mercedes.png" alt="mercedes" width="500px">
-  </div>
-  <div class="hrFranja2">
-    <hr>
-  </div>
-  <div class="hrFranja">
-    <hr>
-  </div>
-  <div class="pUbicacion">
-    <p>DONDE ESTAMOS UBICADOS</p>
-  </div>
-  <div id="map"></div>
-  <script src="scriptMapa.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
-
+  <!-- Footer de las personas reponsables -->
   <footer>
     <p>Ubicación: Álvarez 2336, 2571188 Viña del Mar, Valparaíso</p>
     <p>Teléfono: +56973131723</p>
     <p>© Todos los derechos reservados. Los izquierdos también.</p>
     <p>Simón Ruz - Alen Hidalgo - Esteban Morales</p>
-
-
 
 </body>
 
