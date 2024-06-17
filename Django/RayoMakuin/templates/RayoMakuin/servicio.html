@@ -1,121 +1,108 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Solicitud Servicio</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="styleServicio.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-        
-    
-    <!-- . = clase, # = id -->
-   
+
+<head>
+    <title>{% block title %} Solicitud Servicio {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- links de bootstrap5 -->
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <!-- cargando CSS  -->
+    <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleservicio.css' %}">
 </head>
-    <body>
-        <!--NAVBAR-->
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-             <a class="navbar-brand" href="Home.html">Taller Rayo Makween</a>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Home.html">Inicio</a>
-               </li>
-              </ul>
-             </div>
-            </div>
-           </nav>
-           
-        <br>
-        <h1 style="text-align: center;">SOLICITUD DE SERVICIO</h1>
-        
+
+<body>
+
+    <h1 style="text-align: center;">Solicitud De Servicio</h1>
 
     <div class="container">
         <form>
-            
-            
-        
-        <!--MARCA Y MODELO-->
+            <!-- Patente -->
+            <div class="input-group">
+                <span class="input-group-text"> Patente </span>
+                <input type="text" aria-label="Last name" placeholder="N°Patente" class="form-control">
+            </div>
+
+            <!--MARCA Y MODELO-->
             <div class="input-group">
                 <span class="input-group-text">Marca y Modelo
                 </span>
-                <input type="text" aria-label="Last name" placeholder="Marca"  class="form-control">
-                <input type="text" aria-label="Last name" placeholder="Modelo"  class="form-control">
+                <input type="text" aria-label="Last name" placeholder="Marca" class="form-control">
+                <input type="text" aria-label="Last name" placeholder="Modelo" class="form-control">
             </div>
             <br>
-            <div class="input-group">
-                <span class="input-group-text"> Patente </span>
-                <input type="text" aria-label="Last name" placeholder="N°Patente"  class="form-control">
-            </div>
-            
 
-        <!--TELÉFONO-->
+            <!--TELÉFONO-->
             <div class="mb-3">
                 <br>
                 <label>Teléfono</label>
                 <input type="text" class="form-control" placeholder="ej: +569 1234 5678">
                 <br>
-              
-            <!--TIPO SERVICIO-->
-            <select style="width: 100%;">
-                <option selected>Tipo Servicio</option>
-                <option value="1">Mantenimiento</option>
-                <option value="2">Frenos</option>
-                <option value="3">Diagnóstico</option>
-                <option value="4">Reparación</option>
-                <option value="5">Regeneración</option>
-                <option value="6">Inspección Pre-compra</option>
-                <option value="7">Bateria</option>
-                <option value="8">Otro...</option>
-            </select>
-            <br>
-            <br>
 
-             <!-- COMUNA -->
-            <select style="width: 100%;">
-                <option selected>Comuna</option>
-                <option value="1">Viña del Mar</option>
-                <option value="2">Valparaiso</option>
-                <option value="3">Reñaca</option>
-                <option value="4">Concon</option>
-                <option value="5">Algarrobo</option>
-                <option value="6">Petorca</option>
-            </select>
-            <br>
-            <br>
-            <!--DETALLE TEXTO-->
-            <div class="mb-3">
-                <label>Detalles del servicio</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-              <!--ARCHIVO-->
-              INGRESE ARCHIVO
-            <div class="mb-3">
-                <input class="form-control" type="file" id="formFile">
-            </div>
-            <!--CHECKBOX-->
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Atención Tradicional
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Atención Plus
-                </label>
-            </div>
-              <!--ENVIAR-->
-            <input type="submit" value="enviar"  />
+                <!--TIPO SERVICIO-->
+                <select style="width: 100%;">
+                    <option selected>Tipo Servicio</option>
+                    <option value="1">Mantenimiento</option>
+                    <option value="2">Frenos</option>
+                    <option value="3">Diagnóstico</option>
+                    <option value="4">Reparación</option>
+                    <option value="5">Regeneración</option>
+                    <option value="6">Inspección Pre-compra</option>
+                    <option value="7">Bateria</option>
+                    <option value="8">Otro...</option>
+                </select>
+                <br>
+                <br>
+
+                <!-- COMUNA -->
+                <select style="width: 100%;">
+                    <option selected>Comuna</option>
+                    <option value="1">Viña del Mar</option>
+                    <option value="2">Valparaiso</option>
+                    <option value="3">Reñaca</option>
+                    <option value="4">Concon</option>
+                    <option value="5">Algarrobo</option>
+                    <option value="6">Petorca</option>
+                </select>
+                <br>
+                <br>
+
+                <!--DETALLE TEXTO-->
+                <div class="mb-3">
+                    <label>Detalles del servicio</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <!--ARCHIVO-->
+                INGRESE ARCHIVO
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+
+                <!--CHECKBOX-->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Atención Tradicional
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Atención Plus
+                    </label>
+                </div>
+                
+                <!--ENVIAR-->
+                <input type="submit" value="enviar" />
         </form>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    </body>
-    
+
+</body>
+
 </html>
