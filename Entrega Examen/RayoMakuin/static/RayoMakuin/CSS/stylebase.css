@@ -1,0 +1,103 @@
+nav {
+    font-family: fantasy;
+
+
+}
+
+
+.btn-outline-success {
+    color: chocolate;
+    border-color: chocolate;
+}
+
+
+.hrFranja {
+    height: 20px;
+    background-color: chocolate;
+    margin-top: 1%;
+}
+
+
+.hrFranja2 {
+    height: 20px;
+    background-color: black;
+    margin-top: 5%;
+}
+
+
+.btnCotizar {
+    margin-left: 45%;
+    margin-top: 23%;
+
+}
+
+
+.hrFranja3 {
+    height: 20px;
+    background-color: black;
+    margin-top: 50%;
+}
+
+
+.hrFranja4 {
+    height: 20px;
+    background-color: chocolate;
+    margin-top: 20px;
+}
+
+
+.audiLogo {
+    margin-left: 2%;
+}
+
+
+
+
+.pMecanicos {
+    text-align: center;
+    font-size: 80px;
+    font-family: fantasy;
+}
+
+
+.pMarcas {
+    text-align: center;
+    font-size: 80px;
+    font-family: fantasy;
+}
+
+.pUbicacion {
+    text-align: center;
+    font-size: 80px;
+    font-family: fantasy;
+}
+
+
+
+.rectangular-frame {
+    background-color: rgb(210, 105, 30, 0.9);
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family: verdana;
+    font-weight: bold;
+    margin-top: 150px;
+}
+
+
+footer {
+    background-color: #000;
+    /* Fondo negro */
+    color: #fff;
+    /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}

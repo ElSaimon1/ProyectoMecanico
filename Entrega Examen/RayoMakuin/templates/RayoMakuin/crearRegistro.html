@@ -1,0 +1,45 @@
+{% extends 'RayoMakuin/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>{% block title %} Solicitud Servicio {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    links de bootstrap5
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+
+<body>
+    {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleLogin.css' %}">
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
+                <form action="{% url 'crearRegistro' %}" method="POST" class="card card-body">
+                    <h1>Solicitud De Servicio</h1>
+                    {{error}}
+
+                    {% csrf_token %}
+                    
+                    {{form.as_p}}
+                    
+                    <button type="submit" class="btn btn-primary">
+                        Guardar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <br>
+    {% endblock %}
+</body>
+
+</html>

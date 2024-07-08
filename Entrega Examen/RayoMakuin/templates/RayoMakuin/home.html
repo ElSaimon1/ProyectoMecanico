@@ -1,0 +1,231 @@
+{% extends 'RayoMakuin/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Rayo Makween {% endblock %}</title>
+
+  <!-- links de bootstrap5 -->
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+</head>
+
+<body>
+  {% block content %}
+  <!-- links de bootstrap5 -->
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  {% csrf_token %}
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Incluir jQuery UI desde un CDN -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+
+  <!-- cargando CSS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleHome.css' %}">
+
+  <!-- mensaje de bienvenida y con imagen -->
+  <div class="rectangular-frame">
+    <h1 style="color: aliceblue; font-weight: bold;"><u>¡Bienvenido a Rayo Makween!</u></h1>
+    <p style="color:aliceblue ">
+
+      ¡Estamos encantados de recibirte en nuestro taller mecánico! En Rayo Makween, nos dedicamos a
+      ofrecerte un servicio de calidad y confianza para mantener tu vehículo en óptimas condiciones.
+      Desde reparaciones básicas hasta trabajos especializados, nuestro equipo está aquí para atender todas tus
+      necesidades automotrices.</p>
+  </div>
+
+  <!-- Boton de cotizacion  -->
+  <div class="btnCotizar">
+    <a class="btn btn-primary" href="{% url 'crearRegistro' %}" role="button">Cotizar Servicio</a>
+  </div>
+
+  <!-- Boton de scroll  -->
+  <div class="btnCotizar">
+    <button class="btn btn-primary" id="btn-scroll" role="button">Ir a nuestra ubicación</button>
+  </div>
+
+  <!--  script -->
+  <script>
+    // Función para desplazarse suavemente hacia la parte inferior
+    $('#btn-scroll').click(function () {
+      $('html, body').animate({
+        scrollTop: $(document).height() - $(window).height()
+      }, 1000);
+    });
+  </script>
+
+  <br>
+
+  <div class="contenedor">
+    <h1>PREGUNTAS FRECUENTES</h1>
+    <button id="boton-toggle">+</button>
+    <div id="panel-oculto" class="panel">
+      <h1>1. ¿Qué servicios ofrecen?</h1>
+      <p>Ofrecemos una amplia gama de servicios de mecánica automotriz, incluyendo:
+        <hr>
+        -Diagnóstico y reparación de motores
+        <hr>
+        -Mantenimiento preventivo y correctivo
+        <hr>
+        -Cambio de aceite y filtros
+        <hr>
+        -Revisión de frenos y suspensión
+        <hr>
+        -Reparación de sistemas eléctricos
+        <hr>
+        -Venta e instalación de neumáticos
+        <hr>
+        -Servicio de alineación y balanceo
+      </p>
+      <hr>
+
+      <h1>2. ¿Qué marcas y modelos de vehículos atienden?</h1>
+      <p>Atendemos la mayoria de marcas y modelos de vehículos, tanto nacionales
+        como importados. Contamos con un equipo de mecánicos experimentados
+        y capacitados en el diagnóstico y reparación de todo tipo de automóviles.</p>
+
+      <h1>3. ¿Utilizan repuestos originales?</h1>
+      <p>Sí, utilizamos repuestos originales o de la más alta calidad,
+        siempre buscando la mejor opción para su vehículo y presupuesto. Ofrecemos garantía en todas las piezas y
+        reparaciones que realizamos.</p>
+
+      <h1>4. ¿Cuánto cuesta el servicio?</h1>
+      <p>El costo del servicio dependerá del tipo de trabajo que necesite su vehículo.
+        Le ofrecemos un presupuesto detallado antes de comenzar cualquier trabajo, para que usted pueda tomar una
+        decisión informada.</p>
+
+      <h1>5. ¿Qué horario de atención tienen?</h1>
+      <p>Nuestro horario de atención es de [10:00-19:00]. También atendemos con cita previa fuera de este horario.</p>
+
+      <h1>6. ¿Puedo esperar en el taller mientras se repara mi vehículo?</h1>
+      <p>Sí, por supuesto. Disponemos de una cómoda sala de espera para que pueda relajarse mientras esperamos a que su
+        vehículo esté listo.</p>
+
+      <h1>7. ¿Ofrecen garantía en sus trabajos?</h1>
+      <p>Sí, ofrecemos garantía en todas las piezas y reparaciones que realizamos.
+        La duración de la garantía varía según el tipo de trabajo, pero siempre le informaremos de la misma antes de
+        comenzar cualquier trabajo.</p>
+
+      <h1>8. ¿Cuales son las ventajas de realizar mis mantenciones en Rayo Makuin?</h1>
+      <p>-Mantener el funcionamiento óptimo de todos los sistemas del vehículo.
+        <hr>
+        -Utilización de repuestos originales y aceites autorizados por el fabricante.
+        <hr>
+        -Uso de equipos de diagnóstico y herramientas especiales oficiales del fabricante para el proceso de
+        mantenimiento.
+        <hr>
+        -Detectar de forma anticipada cualquier falla que pueda provocar un riesgo de accidente o reparaciones mayores
+        en el vehículo (ej: desgaste severo en pastillas de freno).
+        <hr>
+        -Técnicos certificados periódicamente por el fabricante.
+        <hr>
+        -Mantener actualizado todos los módulos electrónicos del vehículo mediante el scanner de la marca.
+        <hr>
+        -Prolongar la vida útil del motor y el estado general del vehículo. Mejorar el valor de reventa del vehículo al
+        ser mantenido en un concesionario oficial de la marca.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- decoracion de separacion -->
+  <div class="hrFranja2">
+    <hr>
+  </div>
+  <div class="hrFranja">
+    <hr>
+  </div>
+
+  <div class="container text-center mt-5">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static '../static/RayoMakuin/IMG/imgMeca/caja cambio2.jpg' %}" class="d-block w-100"
+            alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static '../static/RayoMakuin/IMG/imgMeca/direccion.jpg' %}" class="d-block w-100" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static '../static/RayoMakuin/IMG/imgMeca/elec automotriz.jpg' %}" class="d-block w-100"
+            alt="Imagen 3">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Boton de Mecanicos  -->
+  <div class="btnCotizar">
+    <a class="btn btn-primary" href="{% url 'perfilMC' %}" role="button">Mas de Nuestros Mecanicos</a>
+  </div>
+
+
+  <div class="hrFranja3">
+    <hr>
+  </div>
+
+  <div class="hrFranja4">
+    <hr>
+  </div>
+
+  <div class="pMarcas">
+    <p>ALGUNAS DE LAS MARCAS QUE TRABAJAMOS</p>
+  </div>
+
+  <div>
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/audi.png' %}" width="500px" alt="audi logo" class="audiLogo">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/Chevrolet-Logo.png' %}" width="500px" alt="chevrolet logo"
+      class="chevyLogo">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/bmw.png' %}" alt="bmw" width="250px" class="bmwLogo">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/toyota.png' %}" alt="toyota" width="600px" class="toyotaLogo">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/ferrari.png' %}" alt="ferrari" width="500px">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/hyundai.png' %}" alt="hyundai" width="500px">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/ssangyong.png' %}" alt="ssangyong" width="300px">
+    <img src="{% static '../static/RayoMakuin/IMG/imgLogo/mercedes.png' %}" alt="mercedes" width="500px">
+  </div>
+  <div class="hrFranja2">
+    <hr>
+  </div>
+  <div class="hrFranja">
+    <hr>
+  </div>
+  <div class="pUbicacion">
+    <p>DONDE ESTAMOS UBICADOS</p>
+  </div>
+  <div id="map"></div>
+
+
+  <script src="{% static '../static/RayoMakuin/js/scriptMapa.js' %}"></script>
+  <script src="{% static '../static/RayoMakuin/js/scripts.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+  {% endblock %}
+
+</body>
+
+</html>

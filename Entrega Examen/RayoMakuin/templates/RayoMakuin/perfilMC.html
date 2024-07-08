@@ -1,0 +1,79 @@
+{% extends 'RayoMakuin/base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfiles Mecanicos</title>
+
+  <!-- links de bootstrap5 -->
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+
+<body>
+
+  {% block content %}
+  <!-- cargando CSS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleMC.css' %}">
+
+  <img src="{% static '../static/RayoMakuin/IMG/imgMeca/caja cambio2.jpg' %}" alt="mecanico" width="560" height="500">
+  <img src="{% static '../static/RayoMakuin/IMG/imgMeca/elec automotriz.jpg' %}" alt="mecanico" width="500"
+    height="500">
+  <img src="{% static '../static/RayoMakuin/IMG/imgMeca/direccion.jpg' %}" alt="mecanico" width="500" height="500">
+
+  <!-- Button trigger modal -->
+  <button style="margin-left: 40%;" type="button" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop">
+    Ficha tecnica de los mecanicos
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ficha</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-body">
+            <h2 class="fs-5">Informacion Mecanicos</h2>
+            <p>Los profesionales que poseemos son: Renato Neira Aguila, un distinguido ingeniero en mecánica automotriz
+              con especializacion en caja de cambios.<br>
+              Pedro Lopez Mancilla, un ingeniero en mecanica automotriz sobresaliente en la especialidad suspencion y
+              direccion. <br>
+              Juan Rebolledo Sepulveda, Un ingeniero mecánica automotriz especializado en electrónica automotriz
+              <!--popover ingeniereo 1 -->
+              <button class="btn btn-secondary" data-bs-toggle="popover" title="Experiencia:"
+                data-bs-content="Integral Car Service 3 años, M&M Garage 4 años y Taller Rayo Makween 2 años hasta el momento">Experiencia</button>
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hrFranja">
+  </div>
+
+  <div class="hrFranja2">
+  </div>
+
+  <!--script para llamar las depencias del  popover-->
+  <script>
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+  </script>
+  {% endblock %}
+
+</body>
+
+</html>

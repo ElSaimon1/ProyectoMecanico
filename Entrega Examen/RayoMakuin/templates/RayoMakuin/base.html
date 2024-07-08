@@ -1,0 +1,121 @@
+<!-- base de la pagina web -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Rayo Makween {% endblock %}</title>
+  <!-- links de bootstrap5 -->
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <!-- cargando CSS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/stylebase.css' %}">
+</head>
+
+<body>
+  {% csrf_token %}
+  <!-- Navbar  -->
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">Taller Rayo Makween</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Enlaces
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if user.is_authenticated %}
+              <li>
+                <a class="dropdown-item" href="{% url 'crearRegistro' %}">Solicitar Servicios</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              {% endif %}
+              <li><a class="dropdown-item" href="{% url 'perfilMC' %}">Mecanicos</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a class="dropdown-item" href="{% url 'listarRegistro' %}">Ver mis Solicitudes</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              {% endif %}
+              {% if user.is_authenticated %}
+              <li>
+                <a class="dropdown-item" href="{% url 'listarRegistroListo' %}">Ver mis Solicitudes Listas</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              {% endif %}
+              <li>
+                <a class="dropdown-item" href="{% url 'formulario' %}">Postular</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {% if user.is_authenticated %}
+                  {{user.username}}
+              {% else %}
+                  Sesion
+                {% endif %}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              {% if user.is_authenticated %}
+              {% else %}
+                  <a class="dropdown-item" href="{% url 'login' %}">Iniciar Sesion</a>
+              {% endif %}
+            </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesion</a>
+              </li>
+              {% endif %}
+            </ul>
+          </li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+  <!-- bloque de contenido-->
+  {% block content %}
+
+  {% endblock %}
+  <!-- Footer de las personas reponsables -->
+  <footer>
+    <p>Ubicación: Álvarez 2336, 2571188 Viña del Mar, Valparaíso</p>
+    <p>Teléfono: +56973131723</p>
+    <p>© Todos los derechos reservados. Los izquierdos también.</p>
+    <p>Simón Ruz - Alen Hidalgo - Esteban Morales</p>
+  </footer>
+</body>
+
+</html>
