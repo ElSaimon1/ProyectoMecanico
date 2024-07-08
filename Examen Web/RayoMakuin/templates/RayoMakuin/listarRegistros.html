@@ -1,0 +1,54 @@
+{% extends 'RayoMakuin/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Servicio</title>
+    links de bootstrap5
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+
+<body>
+    {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleLogin.css' %}">
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {% csrf_token %}
+                <h1 class="text-center display-3 py-5">Datos de las Solicitudes</h1>
+
+                <ul class="list-group">
+                    {% for lista in listar %}
+                    <li class="list-group-item">
+                        <h1>{{lista.patente}}</h1>
+                        <p>{{lista.marca}}</p>
+                        <p>{{lista.modelo}}</p>
+                        <p>{{lista.telefono}}</p>
+                        <p>{{lista.tipo_ser}}</p>
+                        <p>{{lista.comuna}}</p>
+                        <p>{{lista.Detalles_servicio}}</p>
+
+                        <p>{{lista.trabajoListo|date:'M j Y:i'}}</p>
+                        </a>
+                        <p>
+                            <a href="{% url 'detalleRegistro' lista.id %}">Modificar Registro</a>
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <br>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+</body>
+
+</html>

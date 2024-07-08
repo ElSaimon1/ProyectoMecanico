@@ -1,0 +1,76 @@
+{% extends 'RayoMakuin/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>formulario</title>
+
+  <!-- links de bootstrap5 -->
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+<body>
+  {% block content %}
+  <!-- cargando CSS  -->
+  <link rel="stylesheet" type="text/css" href="{% static '../static/RayoMakuin/CSS/styleFormulario.css' %}">
+
+  <div id="container">
+    <form id="formulario">
+      <div>
+        <label for="Rut">Rut</label><br>
+        <input type="number" id='Rut' class="campo" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="Nombre">Nombre Completo</label><br>
+        <input type="text" id='Nombre' class="campo" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="Edad">Edad</label><br>
+        <input type="number" id='Edad' class="campo" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="Celular">Celular</label><br>
+        <input type="number" id='Celular' class="campo" />
+      </div>
+
+      <br>
+
+      <div>
+        <label for="Correo">Correo</label><br>
+        <input type="email" id='Correo' class="campo" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="Curriculum">Curriculum</label><br>
+        <input type="file" id='Curriculum' class="campo" />
+      </div>
+
+      <button type="submit" onclick="return enviarFormulario();" class="boton">Enviar</button>
+
+    </form>
+    <br>
+    <div id='error' class="errores"></div>
+  </div>
+
+  <script src="{% static '../static/RayoMakuin/js/Validacion.js' %}"></script>
+  {% endblock%}
+</body>
+
+
+</html>
